@@ -1,4 +1,4 @@
-# Omniwallet: A multi-currency web wallet from Mastercoin
+# hcOmniWalle A multi-currency web wallet from Mastercoin
 
 ## What is the OmniLayer/OmniProtocol?
 
@@ -20,7 +20,7 @@ Omniwallet is currently designed to be run from a hosted environment (Like Amazo
 
 There are a few projects needed to set everything up. 
 
-You'll need the Omniwallet, OmniEngine and OmniCore projects from : (https://github.com/OmniLayer)
+You'll need the Omniwallet, OmniEngine and OmniCore projects from : (https://github.com/HcashOrg)
 
 The recommend setup /distribution requires 3 different machines. 
 * Machine 1 (Frontend): Runs Omniwallet repo (frontend, api server)  (Recommend small-medium size machine at least 1.5Gb Ram + 2+gb Swap)
