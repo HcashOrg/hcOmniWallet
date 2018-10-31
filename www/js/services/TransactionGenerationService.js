@@ -24,7 +24,7 @@ angular.module('omniServices')
           if(data.transaction_from && data.transaction_from.length > 0){
             d['from_address'] = data.transaction_from;
             d['pubkey'] = data.pubkey;
-	  }
+          };
           var url = '/v1/transaction/send/';
           var promise = $http.post(url, d);
           return promise;

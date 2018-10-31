@@ -35,6 +35,6 @@ REDIS_DB=0
 #Use if you want custom address namespace (multiple servers on same box)
 #Must prefix custom name with :  example ":stage"
 REDIS_ADDRSPACE=""
-#How long, in seconds, to cache BTC balance info for new addresses, Default 10min (600)
-BTCBAL_CACHE=600
+#How long, in seconds, to cache BTC balance info for new addresses, Default 2min (120)
+BTCBAL_CACHE=120
 

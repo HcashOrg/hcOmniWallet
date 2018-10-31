@@ -8,6 +8,7 @@ from common_utils import *
 from blockchain_utils import *
 from msc_apps import *
 import random
+from decimal import Decimal
 
 max_currency_value=21000000
 dust_limit=5757
@@ -29,7 +30,7 @@ def send_form_response(response_dict):
     # return unspent utxo
     from_addr=response_dict['from_address'][0]
     amount=response_dict['amount'][0]
-    dirty_txes = hc_getunspentutxo(from_addr, float(amount))
+    dirty_txes = hc_getunspentutxo(from_addr, Decimal(amount))
     if dirty_txes["error"] != "none":
         return (None, dirty_txes["error"])
     else:

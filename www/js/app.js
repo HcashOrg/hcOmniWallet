@@ -1,21 +1,21 @@
 //Define Modules here first
 angular.module("omniConfig")
   .factory("TESTNET",["$location",function TestnetFactory($location){
-    //if($location.host().match('testnet') != null){
-    //  Bitcoin.setNetwork('test');
+    if($location.host().match('testnet') != null){
+      Bitcoin.setNetwork('test');
       return true;
-    //} else
-    //  return false;
+    } else
+      return false;
   }])
   .factory("TX_DATA_URL",["TESTNET", function TxDataUrlFactory(TESTNET){
     if(TESTNET)
-      return "http://tbtc.blockr.io/tx/info/";
+      return "https://testnet-explorer.h.cash/explorer/tx/";
     else
       return "https://www.blocktrail.com/BTC/tx/";
   }])
   .factory("ADDRESS_EXPLORER_URL",["TESTNET", function AddressExplorerUrlFactory(TESTNET){
     if(TESTNET)
-      return "http://tbtc.blockr.io/address/info/";
+      return "https://testnet-explorer.h.cash/address/info/";
     else
       return "https://omniexplorer.info/lookupadd.aspx?address=";
   }])

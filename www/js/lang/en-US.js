@@ -32,7 +32,7 @@ angular.module("omniConfig")
 		"DONE":"Done",
 		"ACTIVECROWDSALES":"Active Crowdsales",
 		"HISTORY":"History",
-		"FEES":"Miner Fees (BTC)",
+		"FEES":"Miner Fees (HC)",
 		"PASSWORD":"Password",
 		"DEFAULT":"Default",
 		"SUCCESS":"Success",

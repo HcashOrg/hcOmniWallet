@@ -43,6 +43,7 @@ angular.module("omniServices")
             }
 
             self.processTransaction = function(transaction) {
+                console.log()
                 var deferred = $q.defer();
                 TransactionGenerator.getUnsignedTransaction(transaction.type, transaction.data).then(
                     function(successData) {
@@ -56,45 +57,27 @@ angular.module("omniServices")
                             });
                         } else {
                             var bitcore = require("bitcore-lib");
-                            var privateKey = bitcore.PrivateKey(transaction.address.privkey, TESTNET ? "hcdtestnet" : "hcdlivenet")
-                            var amount = new Big(transaction.data.amount_to_transfer).times(SATOSHI_UNIT).valueOf();
+                            var privateKey = bitcore.PrivateKey(transaction.address.privkey, TESTNET ? "hcdtestnet" : "hcdlivenet");
                             var fee = new Big(transaction.data.fee).times(SATOSHI_UNIT).valueOf();
-                            var changeAddress = transaction.data.transaction_from;
-                            var finalTransaction = bitcore.Transaction()
-                                                    .from(successData.utxos)
-                                                    .to(transaction.data.transaction_to, Math.floor(amount))
-                                                    .fee(Math.floor(fee))
-                                                    .change(transaction.data.transaction_from)
-                                                    .sign(privateKey)
-                            // var tx = self.prepareTransaction(successData.unsignedhex || successData.transaction, successData.sourceScript)
-                            // if (transaction.offline) {
-                            //     var parsedBytes = tx.serialize();
-
-                            //     TransactionGenerator.getArmoryUnsigned(Bitcoin.Util.bytesToHex(parsedBytes), transaction.pubKey).then(function(result) {
-                            //         deferred.resolve({
-                            //             unsignedTransaction: result.data.armoryUnsigned,
-                            //             waiting: false,
-                            //             readyToSign: true,
-                            //             unsaved: true
-                            //         });
-                            //     }, function(errorData) {
-                            //         deferred.reject({
-                            //             waiting: false,
-                            //             transactionError: true,
-                            //             error: errorData.message || errorData.data || 'Unknown Error',
-                            //             errorMessage:'Server error'
-                            //         });
-                            //     });
-                            // } else {
-                            //     try {
-                            //         //DEBUG console.log('before',transaction, Bitcoin.Util.bytesToHex(transaction.serialize()));
-                            //         var signedSuccess = tx.signWithKey(transaction.privKey);
-
-                            //         var finalTransaction = Bitcoin.Util.bytesToHex(tx.serialize());
-
-                            //         //Showing the user the transaction hash doesn't work right now
-                            //         //var transactionHash = Bitcoin.Util.bytesToHex(transaction.getHash().reverse());
-
+                            if (transaction.type == 0 && transaction.data.currency_identifier == 0){
+                                var amount = new Big(transaction.data.amount_to_transfer).times(SATOSHI_UNIT).valueOf();
+                                var finalTransaction = bitcore.Transaction()
+                                                        .from(successData.utxos)
+                                                        .to(transaction.data.transaction_to, Math.floor(amount))
+                                                        .fee(Math.floor(fee))
+                                                        .change(transaction.data.transaction_from)
+                                                        .sign(privateKey);
+                            } else {
+                                var firstOutputAddr = transaction.data.transaction_to == undefined ? transaction.data.transaction_from : transaction.data.transaction_to;
+                                var payload = bitcore.util.buffer.hexToBuffer("6f6d6e69"+successData.payload);
+                                var finalTransaction = bitcore.Transaction()
+                                                        .from(successData.utxos)
+                                                        .to(firstOutputAddr, 100000)
+                                                        .addData(payload)
+                                                        .fee(Math.floor(fee))
+                                                        .change(transaction.data.transaction_from)
+                                                        .sign(privateKey)
+                            }
                             TransactionGenerator.pushSignedTransaction(finalTransaction.toString()).then(
                                 function(successData) {
                                     var successData = successData.data;
@@ -130,17 +113,6 @@ angular.module("omniServices")
                                     })
                                 }
                             );
-
-                            //         //DEBUG console.log(addressData, privKey, bytes, transaction, script, signedSuccess, finalTransaction );
-
-                            //     } catch (e) {
-                            //         deferred.reject({
-                            //             sendError: true,
-                            //             error: e.message || e.data || 'Unknown error',
-                            //             errorMessage:"Error sending transaction"
-                            //         })
-                            //     }
-                            // }
                         }
                     },
                     function(errorData) {

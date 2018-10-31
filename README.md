@@ -1,4 +1,4 @@
-# hcOmniWalle A multi-currency web wallet from Mastercoin
+# Omniwallet: A multi-currency web wallet from Mastercoin
 
 ## What is the OmniLayer/OmniProtocol?
 
@@ -20,7 +20,7 @@ Omniwallet is currently designed to be run from a hosted environment (Like Amazo
 
 There are a few projects needed to set everything up. 
 
-You'll need the Omniwallet, OmniEngine and OmniCore projects from : (https://github.com/HcashOrg)
+You'll need the Omniwallet, OmniEngine and OmniCore projects from : (https://github.com/OmniLayer)
 
 The recommend setup /distribution requires 3 different machines. 
 * Machine 1 (Frontend): Runs Omniwallet repo (frontend, api server)  (Recommend small-medium size machine at least 1.5Gb Ram + 2+gb Swap)
@@ -173,7 +173,7 @@ npm install grunt
 npm install bower
 npm install
 ```
-*Note*: You need to populate $HOME/.bitcoin/bitcoin.conf with rpcssl, rpcuser, rpcpassword, and rpcport, example config:
+*Note*: You need to populate $HOME/.hcwallet/omni.conf with rpcssl, rpcuser, rpcpassword, and rpcport, and database configuration information for the API user example config:
 ```
 server=1
 rpcport=8332
@@ -181,15 +181,11 @@ rpcuser=user
 rpcpassword=pass
 rpcssl=0
 rpcconnect=<remote.ip.address>
-```
 
-*Note*: You need to populate the $HOME/.omni/sql.conf with the database configuration information for the API user:
-```
 sqluser=
 sqlport=
 sqlconnect=
 sqldatabase=
-#sqlpassword=
 sqlpassword=
 ```
 

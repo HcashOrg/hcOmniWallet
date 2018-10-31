@@ -1,6 +1,6 @@
 angular.module("omniControllers")
-  .controller("HomeController", ["$scope","$templateCache", "$injector", "$location","$http", "$q", "Account", "Address", "PropertyManager",
-    function HomeController($scope, $templateCache, $injector, $location, $http, $q, Account, Address, PropertyManager) {
+  .controller("HomeController", ["$scope","$templateCache", "$injector", "$location","$http", "$q", "Account", "Address", "PropertyManager", "TESTNET",
+    function HomeController($scope, $templateCache, $injector, $location, $http, $q, Account, Address, PropertyManager, TESTNET) {
     if (Account.uuid) {
       $location.url('/wallet/overview');
     } else {
@@ -14,7 +14,8 @@ angular.module("omniControllers")
       $scope.total = 0;
       $scope.validate = function(address) {
         //console.log('checking '+address);
-        return Bitcoin.Address.validate(address);
+        var bitcore = require('bitcore-lib');
+        return bitcore.Address.isValid(address, TESTNET ? "hcdtestnet" : "hcdlivenet", 'pubkeyhash');
       };
       $scope.checkBalance = function() {
         $scope.pricesLoaded = false;

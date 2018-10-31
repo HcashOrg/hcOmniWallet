@@ -33,9 +33,9 @@
                 <div class="dropdown pull-right">
                       <a data-toggle="dropdown" href="#" class="btn btn-tertiary btn-xs"> {{ 'COMMON.ACTIONS' | translate }} </a>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu9">
-                          <li ng-show="address.privkey != undefined" role="presentation">
+<!--                           <li ng-show="address.privkey != undefined" role="presentation">
                               <a role="menuitem" tabindex="-1" href="#" ng-click="modalManager.getPubkey(address)" > {{ 'COMMON.PUBKEY' | translate}} </a>
-                          </li>
+                          </li> -->
                           <li ng-show="address.privkey != undefined" role="presentation">
                               <a role="menuitem" tabindex="-1" href="#" ng-click="modalManager.openSignMessage(address)" > {{ 'COMMON.SIGNMSG' | translate}} </a>
                           </li>

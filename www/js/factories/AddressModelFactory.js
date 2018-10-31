@@ -67,11 +67,13 @@ angular.module("omniFactories")
 						var data = result.data;
 						//console.log("found data for "+data.address+" its length is "+data.transactions.length);
 						txs=data.transactions;
-						return txs.map(function(tx){
+						var res = [];
+						txs.map(function(tx){
 							if ((tx.currency.propertyid < 2147483648 && tx.currency.propertyid != 2) || showtesteco === 'true') {
-								return tx;
+								res.push(tx);
 							}
 						});
+						return res;
 					});
 				}
 
@@ -141,18 +143,18 @@ angular.module("omniFactories")
 					}
 				}
 
-                                self.signMsg = function(msg) {
-                                    var bitcore = require('bitcore-lib');
-                                    var Message = require('bitcore-message');
-                                    var privateKey = bitcore.PrivateKey(self.privkey, TESTNET ? "hcdtestnet" : "hcdlivenet");
-                                    var signature = Message(msg).sign(privateKey);
-                                    return signature;
-                                }
+				self.signMsg = function(msg) {
+					var bitcore = require('bitcore-lib');
+					var Message = require('bitcore-message');
+					var privateKey = bitcore.PrivateKey(self.privkey, TESTNET ? "hcdtestnet" : "hcdlivenet");
+					var signature = Message(msg).sign(privateKey);
+					return signature;
+				}
 
-                                self.genPubkey = function() {
-                                    var pubkey = Bitcoin.ECKey.decodeEncryptedFormat(self.privkey, self.hash).getPubKeyHex();
-                                    return pubkey;
-                                }
+				self.genPubkey = function() {
+					var pubkey = Bitcoin.ECKey.decodeEncryptedFormat(self.privkey, self.hash).getPubKeyHex();
+					return pubkey;
+				}
 
 				self.initialize();
 			}

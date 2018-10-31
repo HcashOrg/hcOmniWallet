@@ -8,8 +8,8 @@ import config
 class OmniTransaction:
     confirm_target=6
     HEXSPACE_SECOND='21'
-    mainnet_exodus_address='1EXoDusjGwvnjZUyKkxZ4UHEf77z6A5S4P'
-    testnet_exodus_address='mpexoDuSkGGqvqrkrjiFng38QPkJQVFyqv'
+    mainnet_exodus_address='HsMFSvWd7FxpGUqbwYtGZMNEb2zyZ2zaqpk'
+    testnet_exodus_address='TsSmoC9HdBhDhq4ut4TqJY7SBjPqJFAPkGK'
 
     def __init__(self,tx_type,form):
         self.conn = getRPCconn()
@@ -52,6 +52,12 @@ class OmniTransaction:
         #initialize values
         rawtx = None
         fee_total = Decimal(self.fee)
+
+        dirty_txes = hc_getunspentutxo(self.rawdata["transaction_from"], int(float(self.rawdata["fee"])*float(1e8)) + 100000)
+        if dirty_txes["error"] != "none":
+            return {'status':503, 'error':dirty_txes["error"]}
+        else:
+            return {"status":200, "utxos":dirty_txes["utxos"], "payload":payload}
 
         if 'transaction_to' in self.rawdata:
             # Add reference for reciever to figure out potential tx cost
