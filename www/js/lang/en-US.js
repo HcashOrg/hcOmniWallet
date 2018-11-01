@@ -91,7 +91,7 @@ angular.module("omniConfig")
 		"ASATOOLTIP":"Enter an answer for your security question."
 	},
 	"HOMEPAGE":{
-		"ADDRESSEXAMPLE":"(e.g. 1EXoDusjGwvnjZUyKkxZ4UHEf77z6A5S4P)",
+		"ADDRESSEXAMPLE":"(e.g. HsXtW44KRivHgpH3EP4GcYXeJ9NgcjPiKPm)",
    		"BALANCECHECK":"Balance Check",
    		"CHECKBALANCE":"Check Balance",
 		"ENTERVALIDADDRESS":"Enter a valid Bitcoin Address ",
