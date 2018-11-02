@@ -1,29 +1,29 @@
-# Omniwallet: A multi-currency web wallet from Mastercoin
+# HcOmniwallet: A multi-currency web wallet from HC
 
 ## What is the OmniLayer/OmniProtocol?
 
 [Omni](http://www.omnilayer.org) is both a new type of currency (OMNI) and a platform. It is a protocol layer 
-running on top of [Bitcoin](https://bitcoin.org) similar to how HTTP runs on top of TCP/IP. It provides a [decentralized currency exchange](https://www.omniwallet.org/dex/overview), user currencies, [smart property](https://www.omniexplorer.info/search/1), and other features.
+running on top of [Bitcoin](https://bitcoin.org) similar to how HTTP runs on top of TCP/IP. It provides a [decentralized currency exchange](https://www.Omniwallet.org/dex/overview), user currencies, [smart property](https://www.omniexplorer.info/search/1), and other features.
 
 For more information see the [OmniLayer website](http://www.omnilayer.org). 
 
-## What is Omniwallet?
+## What is HcOmniwallet?
 
-[Omniwallet](https://www.omniwallet.org/) is a new type of web wallet, that combines security, ease of use, multi-currency support, and is completely open source from the ground up (even including the deployment scripts)
+[HcOmniwallet](https://hcomni-wallet.h.cash/) is a new type of web wallet, that combines security, ease of use, multi-currency support, and is completely open source from the ground up (even including the deployment scripts)
 
 It currently supports Bitcoin and OMNI, and all OmniProtocol created tokens.
 
-You can access the site at [https://www.omniwallet.org](https://www.omniwallet.org/) (Note: Omniwallet is in active development, make sure you maintain proper backups of all address!)
+You can access the site at [hcomni-wallet.h.cash](https://hcomni-wallet.h.cash/) (Note: HcOmniwallet is in active development, make sure you maintain proper backups of all address!)
 
 ## Ubuntu Setup
-Omniwallet is currently designed to be run from a hosted environment (Like Amazon AWS). 
+HcOmniwallet is currently designed to be run from a hosted environment (Like Amazon AWS). 
 
 There are a few projects needed to set everything up. 
 
-You'll need the Omniwallet, OmniEngine and OmniCore projects from : (https://github.com/OmniLayer)
+You'll need the HcOmniwallet, HcOmniEngine and HcOmni projects from : (https://github.com/HcashOrg)
 
 The recommend setup /distribution requires 3 different machines. 
-* Machine 1 (Frontend): Runs Omniwallet repo (frontend, api server)  (Recommend small-medium size machine at least 1.5Gb Ram + 2+gb Swap)
+* Machine 1 (Frontend): Runs HcOmniwallet repo (frontend, api server)  (Recommend small-medium size machine at least 1.5Gb Ram + 2+gb Swap)
 * Machine 2 (Backend): Runs caching system along with Omnicore and OmniEngine repos  (Recommend medium to large size machine with 2nd data drive ~300+gb for blockchain storage)
 * Machine 3 (Database): Postgres database (can also be a dedicated aws rdb instance ~medium size with 10gb space right now)
 
@@ -32,15 +32,10 @@ All three machines should be able to talk to eachother on an internal network.
 * The backend needs to be able to talk to the public internet but doesn't need anything exposed. 
 * The database only needs to be reachable on the internal network
 
-### Automated Install
-
-It is highly recommended to use the Automated Install method as the Manual method is currently outdated and in process of being updated
-
-Check out the [Omni Devops Project](https://github.com/OmniLayer/omni-devops)
 
 ### Manual Install 
 
-As Omniwallet is a growing/changing project the following is a work in progress and may not be 100% complete with current changes.
+As HcOmniwallet is a growing/changing project the following is a work in progress and may not be 100% complete with current changes.
 
 
 #### Database 
@@ -81,11 +76,11 @@ You'll want to start it as daemon or background process so it can run while you 
 
 Something along the lines of this works well:   ```nohup omnicored &```
 
-Because it is a fork of Bitcoin-core it supports all the standard config options. 
+Because it is a fork of HC it supports all the standard config options. 
 
-So if you need to use a separate data directory you can add the config lines: ```-conf=/path/to/bitcoin.conf/config/directory```
+So if you need to use a separate data directory you can add the config lines: ```-conf=/path/to/omni.conf/config/directory```
 
-Once that is running let sync and get current with the blockchain. You can tail the ~/.bitcoin/debug.log  or omnicore.log   file periodically for status updates. 
+Once that is running let sync and get current with the blockchain. You can tail the ~/.omni/debug.log  or omnicore.log   file periodically for status updates. 
 
 Note: this process may take several days if you are starting from scratch. Alternatively if you happen to have a copy of the blockchain data from a Bitcoin-core 0.13 client you can copy it over and use it (future versions 0.14 may not work)
 
@@ -97,9 +92,9 @@ should be as simple as 'apt-get install redis-server'
 
 #### OmniEngine
 -------------------------------
-The Omniwallet parsing engine that does the second half of backend work (taking transaction data from Omnicore and putting it in the database for Omniwallet to use)
+The HcOmniwallet parsing engine that does the second half of backend work (taking transaction data from Omnicore and putting it in the database for HcOmniwallet to use)
 
-Clone [OmniEngine](https://github.com/OmniLayer/omniEngine) to machine 2. 
+Clone [HcOmniEngine](https://github.com/HcashOrg/hcOmniEngine) to machine 2. 
 
 Uses python 2.7 and pip so you'll need to make sure its installed. 
 
@@ -119,15 +114,7 @@ Important Notes:
 sudo apt-get update
 sudo apt-get install git build-essential autoconf libtool libboost-all-dev pkg-config libcurl4-openssl-dev libleveldb-dev libzmq-dev libconfig++-dev libncurses5-dev python-simplejson python-git libffi-dev libpq-dev uwsgi uwsgi-plugin-python
 ```
-For Armory offline addresses build and install Armory packages
-```
-sudo apt-get install git-core build-essential pyqt4-dev-tools swig libqtcore4 libqt4-dev python-qt4 python-dev python-twisted python-psutil
-git clone https://github.com/goatpig/BitcoinArmory.git
-check any dependancies for BitcoinArmory then
-cd BitcoinArmory
-sudo make
-sudo make install
-```
+
 Install Python-pip
 ```
 cd
@@ -138,11 +125,11 @@ sudo python get-pip.py
 Clone Omni repository:
 ```
 cd
-git clone https://github.com/OmniLayer/omniwallet
+git clone https://github.com/HcashOrg/hcOmniWallet
 ```
 Install nginx:
 ```
-cd omniwallet
+cd HcOmniwallet
 sudo -s
 pip install -r requirements.txt
 nginx=stable # use nginx=development for latest development version
@@ -155,11 +142,11 @@ Find and replace the following sections near the beginning of /etc/nginx/sites-a
 ```
 nano /etc/nginx/sites-available/default
 
-        ## Set this to reflect the location of the www directory within the omniwallet repo.
-        root /home/myUser/omniwallet/www/; -> "root /{path to project}/omniwallet/www/;
+        ## Set this to reflect the location of the www directory within the HcOmniwallet repo.
+        root /home/myUser/HcOmniwallet/www/; -> "root /{path to project}/HcOmniwallet/www/;
 
-        ## Set this to reflect the location of the omni-redirects file within the omniwallet repo
-        include /home/myUser/omniwallet/etc/nginx/sites-available/omni-redirects;
+        ## Set this to reflect the location of the omni-redirects file within the HcOmniwallet repo
+        include /home/myUser/HcOmniwallet/etc/nginx/sites-available/omni-redirects;
 
 ```
 Install nodejs/npm and dependancies:
@@ -209,17 +196,7 @@ app.sh
 It is recommend to run the api service in a screen or other automated service that does not exit / close when session is termindated
 ```
 screen -S omni
-cd /{path to project}/omniwallet
+cd /{path to project}/HcOmniwallet
 ./app.sh
 ```
 Hit CTRL+a+d to exit the screen while keeping it active, and use the command ``screen -S omni``.
-
-## Development Contributions, Signing with your PGP key
-
-Signing your commits with a PGP key is always appreciated.
-1. Generate a key: http://stackoverflow.com/a/16725717/364485
-2. Sign your commit: ``git commit -S`` (Works for merges too, don't need to sign every commit, just the last one before you push something up.
-3. Check the signature on your commit: https://github.com/mastercoin-MSC/omniwallet/commit/d05dd949acb7234843d0e32b50c12a3556b8444b
-
-## API
-See the [API Documentation](https://api.omniwallet.org)
