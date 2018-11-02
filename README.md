@@ -47,12 +47,10 @@ As HcOmniwallet is a growing/changing project the following is a work in progres
 * Lastly import the balances.csv file into the `addressbalances` table to prime the initial balance data that is not provided by OmniCore.
  * Note: there are 2 users used for general operation. 1 user is used by frontend to read stuff from db  (variable ":omniwww") and do minimal writing. The other is the user used by omniengine to keep things updated (variable ":omniengine"). Define those names/passwords as needed and save for later. 
 
-#### Omnicore
--------------------------------
-(At the time of this writing the current version is OmniCore v0.3) 
-* Omnicore is the reference client for the Omni Protocol. When it comes to transaction validity, status or outcome, it is the law.
-* Updates to Omnicore must be maintained otherwise its possible for older versions to create/parse transactions incorrectly causing consensus breaking differences in implimentations. 
-* Note: Omnicore is a fork/clone of Bitcoin Core with the Omnilayer logic added in . This means it will need to download the entire blockchain 100GB+ this is a slow and resource using task. Until it is fully synced it can not be used for anything. 
+#### hcOMNI
+------------------------------- 
+* hcOMNI is the reference client for the HcOmni Protocol. When it comes to transaction validity, status or outcome, it is the law.
+* Updates to hcOMNI must be maintained otherwise its possible for older versions to create/parse transactions incorrectly causing consensus breaking differences in implimentations. 
 
 Recommend example config:
 ```
@@ -90,7 +88,7 @@ Machine 2 is designed to leverage a default install of redis-server for caching.
 should be as simple as 'apt-get install redis-server'
 
 
-#### OmniEngine
+#### HcOmniEngine
 -------------------------------
 The HcOmniwallet parsing engine that does the second half of backend work (taking transaction data from Omnicore and putting it in the database for HcOmniwallet to use)
 
