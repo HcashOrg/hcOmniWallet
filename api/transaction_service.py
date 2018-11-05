@@ -45,7 +45,7 @@ def estimatefees(addr):
 
     balance=bc_getbalance(address)
     if 'bal' in balance and balance['bal']>0:
-      unspent=bc_getutxo(addr,amount)
+      unspent=hc_getunspentutxo(addr,amount)
       if 'utxos' in unspent:
         ins=len(unspent['utxos'])
         if unspent['avail'] == amount:
@@ -100,7 +100,6 @@ def getaddress():
         address = str(re.sub(r'\W+', '', request.form['addr'] ) ) #check alphanumeric
     except ValueError:
         abort(make_response('This endpoint only consumes valid input', 400))
-    print ">>> 1"
     ROWS=dbSelect("""select t.TxHash, t.TxType, t.TxRecvTime, t.TxState,
                             atx.AddressRole, atx.BalanceAvailableCreditDebit,
                             sp.PropertyData
@@ -108,7 +107,6 @@ def getaddress():
                       where t.txdbserialnum = atx.txdbserialnum and sp.PropertyID = atx.PropertyID and atx.address=%s and t.txdbserialnum >0
                       and sp.Protocol != 'Fiat'
                       order by t.txdbserialnum DESC""", [address])
-    print ">>> 2"
     transactions = []
 
     if len(ROWS) > 0:
@@ -211,13 +209,13 @@ def gettransaction(hash_id):
     }
     print "transaction_service:ret===",ret
     if txType not in [-22,21,25,26,27,28]: #Dex purchases don't have these fields
-      ret['currencyId'] = txJson['propertyid']
-      ret['currency_str'] = 'Omni' if txJson['propertyid'] == 1 else 'Test Omni' if txJson['propertyid'] == 2 else "Smart Property"
+      ret['currencyId'] = txJson['propertyid'] if 'propertyid' in txJson else ''
+      ret['currency_str'] = '' if 'propertyid' not in txJson else 'Omni' if txJson['propertyid'] == 1 else 'Test Omni' if txJson['propertyid'] == 2 else "Smart Property"
       ret['invalid'] = not txValid
-      ret['amount'] = str(txJson['amount'])
-      ret['formatted_amount'] = txJson['amount']
-      ret['divisible'] = txJson['divisible']
-      ret['fee'] = txJson['fee']
+      ret['amount'] = str(txJson['amount']) if 'amount' in txJson else ''
+      ret['formatted_amount'] = txJson['amount'] if 'amount' in txJson else ''
+      ret['divisible'] = txJson['divisible'] if 'divisible' in txJson else ''
+      ret['fee'] = txJson['fee'] if 'fee' in txJson else ''
       ret['tx_type_str'] = txJson['type']
 
     if txType == 0 and txValid:
@@ -238,14 +236,14 @@ def gettransaction(hash_id):
       try:
         mpData = json.loads(ROWS[0][-3])
       except TypeError:
-	print "except"
+        print "except"
         mpData = ROWS[0][-3]
       print "mpData",mpData
       ret['previous_property_id'] = "(null)" #TODO FIXME
       print "mpData['name']==",mpData['name']
       ret['propertyName'] = dehexify( mpData['name'] )
       ret['propertyCategory'] = dehexify( mpData['category'] )
-      ret['propertyData'] = dehexify( mpData['data'] )
+      ret['propertyData'] = mpData['data']
       ret['propertySubcategory'] = dehexify( mpData['subcategory'] )
       ret['propertyUrl'] = dehexify( mpData['url'] )
 

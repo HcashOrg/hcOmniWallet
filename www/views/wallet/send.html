@@ -78,7 +78,7 @@
           </div>
         </div>
         <p>
-          {{ 'WALLET.SEND.COST' | translate}}: {{selectedAsset.symbol == 'BTC'? minersFee.valueOf() : minersFee.plus(protocolFee).valueOf()}} HC <button type="button" class="btn btn-xs" ng-click="editTransactionCost()"><span class="glyphicon glyphicon-pencil small"></span></button>
+          {{ 'WALLET.SEND.COST' | translate}}: {{selectedAsset.symbol == 'BTC'? minersFee.valueOf() : minersFee.plus(protocolFee).valueOf()}} HC <!-- <button type="button" class="btn btn-xs" ng-click="editTransactionCost()"><span class="glyphicon glyphicon-pencil small"></span></button> -->
         </p>
         <p>
           {{ 'WALLET.SEND.AVAIL' | translate}}: {{selectedAddress.getDisplayBalance(0)}} HC

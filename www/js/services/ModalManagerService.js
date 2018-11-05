@@ -460,10 +460,10 @@ angular.module("omniServices")
                           //var eckey = new Bitcoin.ECKey(address.privkey);
                           //addr = eckey.getBitcoinAddress().toString();
                           var privKey = bitcore.PrivateKey(address.privkey, TESTNET ? "hcdtestnet" : "hcdlivenet");
-                          addr = privKey.toAddress().toString();
+                          addrByPrivkey = privKey.toAddress().toString();
                         }
                         //if(Bitcoin.Address.validate(addr)){
-                        if(bitcore.Address.isValid(addr, TESTNET ? "hcdtestnet" : "hcdlivenet", 'pubkeyhash')){
+                        if(addr == addrByPrivkey && bitcore.Address.isValid(addr, TESTNET ? "hcdtestnet" : "hcdlivenet", 'pubkeyhash')){
                           validated.addresses.push(address);
                           $scope.progressMessage = "Validated address " + addr;
                           $scope.progressColor = "green";
@@ -774,7 +774,7 @@ angular.module("omniServices")
               try {
                 //var eckey = new Bitcoin.ECKey(address);
                 //var addr = eckey.getBitcoinAddress().toString();
-                bitcore.PrivateKey.isValid(privkey, TESTNET ? "hcdtestnet" : "hcdlivenet");
+                bitcore.PrivateKey(privkey, TESTNET ? "hcdtestnet" : "hcdlivenet");
                 return true;
               } catch (e) {
                 return false;

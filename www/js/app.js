@@ -1,23 +1,23 @@
 //Define Modules here first
 angular.module("omniConfig")
   .factory("TESTNET",["$location",function TestnetFactory($location){
-    if($location.host().match('testnet') != null){
+    if($location.host() == "hcomni-wallet.h.cash"){
+      return false;
+    } else
       Bitcoin.setNetwork('test');
       return true;
-    } else
-      return false;
   }])
   .factory("TX_DATA_URL",["TESTNET", function TxDataUrlFactory(TESTNET){
     if(TESTNET)
       return "https://testnet-explorer.h.cash/explorer/tx/";
     else
-      return "https://www.blocktrail.com/BTC/tx/";
+      return "https://hc-explorer.h.cash/explorer/tx/";
   }])
   .factory("ADDRESS_EXPLORER_URL",["TESTNET", function AddressExplorerUrlFactory(TESTNET){
     if(TESTNET)
-      return "https://testnet-explorer.h.cash/address/info/";
+      return "http://testnet-hcomni-explorer.h.cash/address/";
     else
-      return "https://omniexplorer.info/lookupadd.aspx?address=";
+      return "http://hcomni-explorer.h.cash/address/";
   }])
   .factory("EXODUS_ADDRESS",["TESTNET", function AddressExplorerUrlFactory(TESTNET){
     if(TESTNET)

@@ -1,11 +1,11 @@
 RECAPTCHA_PRIVATE = None #replace private key text here
 ADMINEMAIL = None #admin email
-DOMAIN = None     #Replace with domain to override email domain lookup, otherwise system hostname is used
-EMAILFROM = '823743856@qq.com'  #Is set to None, use noreply@domain
-SMTPUSER = '823743856@qq.com'   #If your smtp server requires authentication define it here
-SMTPPASS = 'slehqmwpfzwfbddd'   #If your smtp server requires authentication define it here
-SMTPDOMAIN = 'smtp.qq.com'  #smtp server to use for sending, default    'localhost'
-SMTPPORT = 587     #smtp port,  default 25
+DOMAIN = 'testnet-hcomni-wallet.h.cash'   #Replace with domain to override email domain lookup, otherwise system hostname is used
+EMAILFROM = 'hcomniwallet@h.cash'  #Is set to None, use noreply@domain
+SMTPUSER = 'hcomniwallet@h.cash'   #If your smtp server requires authentication define it here
+SMTPPASS = 'Bn7B4FP4VgXaZZ83'   #If your smtp server requires authentication define it here
+SMTPDOMAIN ='smtp.mxhichina.com'  #smtp server to use for sending, default    'localhost'
+SMTPPORT =465      #smtp port,  default 25
 SMTPSTARTTLS = True  # Use starttls before SMTP login
 WELCOMECID = None #mailgun campaign id for welcome email stats
 
@@ -19,8 +19,8 @@ WEBSOCKET_SECRET = 'SocketSecret!'
 
 #used for encrypting/decrypting secure values. 
 #NOTE: If these values change, anything previously encrypted with them will need to be updated / encrypted with the new values
-AESKEY='use a 16 char password'
-AESIV='use a 16 char password'
+AESKEY='0604b0ffa093258c'
+AESIV='4b763e6e77c3db01'
 
 #Donation Address Pubkey  (We need the pubkey so that if an address hasn't sent a tx before we don't need the private key to get the pubkey)
 D_PUBKEY = '04ec31f456cc70a60793ff2033d9d2094541a5de8cac67ab1e5b1441187c6bed1601dc64c447244618268af0bd449d90d2ce71816efc69dc7921a226ed60fe926b'

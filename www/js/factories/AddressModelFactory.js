@@ -7,13 +7,18 @@ angular.module("omniFactories")
 				self.initialize = function(){
 					if(!BalanceSocket.connected)
 						BalanceSocket.connect();
+  					var typeNumber = 8;
+					var errorCorrectionLevel = 'L';
+					var qr = qrcode(typeNumber, errorCorrectionLevel);
+					qr.addData(hash);
+					qr.make();
 					self.loaded = false;
 					self.hash = hash;
 					self.privkey = privkey;
 					self.pubkey = pubkey;
 					self.balance = [];
 					self.assets = [];
-					self.qr = "https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl="+hash+"&choe=UTF-8";
+					self.qr = qr.createDataURL();
 					
 					//AddressManager.getTransactions(hash).then(function(result){
 					//	var data = result.data;

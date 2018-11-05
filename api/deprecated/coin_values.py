@@ -11,9 +11,10 @@ from msc_utils_general import *
 data_dir_root = os.environ.get('DATADIR')
 
 def get_prices():
-    
+    print ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>enter into get_price" 
     filename = data_dir_root + '/www/values/BTC.json'
-    btcvalue=get_btc_price()
+    print filename
+    btcvalue=get_hc_price()
     if btcvalue['price'] > 0:
       atomic_json_dump(btcvalue,filename)
       write_history(btcvalue)
@@ -70,7 +71,21 @@ def calculate_spt_price(sp):
         #return 1.0/int( sp['numberOfProperties'] )
     else:
         return 0
-   
+def get_hc_price():
+  print "enter into get_hc_price"
+  try:
+    r = requests.get("https://api.huobipro.com/market/history/kline?period=1min&size=1&symbol=hcusdt",timeout=15)
+    print r.json()['data']
+    result_dict = {
+      'symbol':'BTC',
+      'price':r.json()['data'][0]['open']
+    }
+  except requests.exceptions.RequestException:
+    result_dict = {
+      'symbol' : 'BTC',
+      'price' : 0
+    }
+  return result_dict   
 def get_btc_price():
     try:
       r= requests.get( 'https://api.bitcoinaverage.com/all', timeout=15 )  

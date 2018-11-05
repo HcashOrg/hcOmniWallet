@@ -8,7 +8,7 @@ import config
 from omnitransaction import OmniTransaction
 
 #conn = bitcoinrpc.connect_to_local()
-conn = getRPCconn()
+#conn = getRPCconn()
 #tools_dir = os.environ.get('TOOLSDIR')
 #lib_path = os.path.abspath(tools_dir)
 #sys.path.append(lib_path)

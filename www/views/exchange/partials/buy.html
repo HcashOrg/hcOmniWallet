@@ -55,7 +55,7 @@
           <div class="col-sm-6">
             <div class="form-group">
               <label>{{ 'EXCHANGE.SALE.PRICE' | translate }}: </label>
-              <span class="form-control">{{ global['buyOffer'].formatted_price_per_coin }} BTC </span>
+              <span class="form-control">{{ global['buyOffer'].formatted_price_per_coin }} HC </span>
             </div>
           </div>
         </div>
@@ -64,7 +64,7 @@
             <div class="form-group">
               <label> {{ 'EXCHANGE.BUY.FEE' | translate }}: </label>
               <span class="form-control">
-                {{ global['buyOffer'].formatted_fee_required }} BTC
+                {{ global['buyOffer'].formatted_fee_required }} HC
               </span>
             </div>
           </div>
@@ -99,16 +99,16 @@
                 tooltip-append-to-body="true"
                 tooltip-placement="top"> <strong>(?)</strong> </a> </label>
               <span class="form-control">
-                {{ ( global['buyOffer'].formatted_price_per_coin * buyAmount ) | number:8 }} BTC
+                {{ ( global['buyOffer'].formatted_price_per_coin * buyAmount ) | number:8 }} HC
               </span>
               <p class="help-block">
-                {{ 'EXCHANGE.BUY.AMOUNTAVAILABLEBTC' | translate }}: {{selectedAddress.getDisplayBalance(0)}} BTC
+                {{ 'EXCHANGE.BUY.AMOUNTAVAILABLEBTC' | translate }}: {{selectedAddress.getDisplayBalance(0)}} HC
               </p>
             </div>
           </div>
         </div>
         <p>
-          {{ 'WALLET.SEND.COST' | translate}}: {{ minersFee.plus(protocolFee).valueOf()}} BTC <button type="button" class="btn btn-xs" ng-click="editTransactionCost()"><span class="glyphicon glyphicon-pencil small"></span></button>
+          {{ 'WALLET.SEND.COST' | translate}}: {{ minersFee.plus(protocolFee).valueOf()}} HC <button type="button" class="btn btn-xs" ng-click="editTransactionCost()"><span class="glyphicon glyphicon-pencil small"></span></button>
         </p>
         <button type="submit" class="btn btn-main pull-right">{{ 'COMMON.NEXT' | translate}}</button>
       </form>  

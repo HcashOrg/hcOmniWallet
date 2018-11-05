@@ -16,6 +16,8 @@ angular.module('omniServices').service('appraiser', ['$rootScope', '$http', '$q'
     });
 
     var processValueBook = function (valuebook) {
+      console.log("processValueBook")
+	console.log(valuebook)
       var coins = Wallet.assets;
       var changed = [];
       coins.forEach(function(coin) {
@@ -28,7 +30,7 @@ angular.module('omniServices').service('appraiser', ['$rootScope', '$http', '$q'
         if (typeof currency != "undefined") {
           if (currency.symbol == 'BTC') {
             // Store these things internally as the value of a satoshi.
-            self.conversions.BTC = currency.price / 100000000;
+              self.conversions.BTC = currency.price / 100000000;
           } else {
             self.conversions[currency.symbol] = currency.price;
           }

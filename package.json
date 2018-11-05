@@ -6,21 +6,19 @@
 		"npm": "1.1.x"
 	},
 	"dependencies": {
+		"bower": "1.3.x",
 		"grunt": "0.4.x",
+		"grunt-contrib-clean": "0.5.x",
 		"grunt-git": "0.2.x",
 		"grunt-shell": "0.6.x",
-		"grunt-contrib-clean": "0.5.x",
-		"bower": "1.3.x"
+		"qrcode-generator": "^1.4.1"
 	},
 	"devDependencies": {
 		"connect": "2.x.x",
 		"express": "~3.4.8",
 		"qs": "~> 1.0.0"
 	},
-    "scripts": {
-            "install": "grunt"
-    }
-
+	"scripts": {
+		"install": "grunt"
+	}
 }
-
-

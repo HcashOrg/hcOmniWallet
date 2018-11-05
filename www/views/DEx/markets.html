@@ -1,13 +1,13 @@
 <div ng-controller="DExOverviewController">
     <div class="row om-row">
-      <div class="col-xs-3 col-sm-3 col-md-4 col-lg-4 text-left om-title">
+      <div class="col-xs-12 col-sm-3 col-md-4 col-lg-4 text-left om-title">
           {{ 'OMNIDEX.MARKETS.TITLE' | translate }}
           <span class="h5 pull-right"><a href="https://github.com/OmniLayer/omniwallet/wiki/Using-the-OmniDex" target="_blank">Getting Started Guide</a></span>
       </div>
-      <div class="col-xs-2 col-sm-2 col-md-3 col-lg-3"><button type="button" ng-show="true" class="btn btn-info" title="Show All Markets!" ng-click="showAll()">
+      <div class="col-xs-6 col-sm-2 col-md-3 col-lg-3"><button type="button" ng-show="true" class="btn btn-info" title="Show All Markets!" ng-click="showAll()">
         {{filterMarkets ? "Show All Markets" : "Filter Markets"}}</button>
       </div>
-      <div class="col-xs-7 col-sm-7 col-md-5 col-lg-5 text-right" ng-include="'/views/assets/partials/form_ecosystem.html'"></div>
+      <div class="col-xs-6 col-sm-7 col-md-5 col-lg-5 text-right" ng-include="'/views/assets/partials/form_ecosystem.html'"></div>
     </div>
 
 
@@ -29,12 +29,12 @@
 
 
     <div ng-init="loadDesignatingCurrencies()">
-      <div class="form-group col-sm-12">
+      <div class="form-group">
         <label for="base">Market Currency</label>
         <combobox name="base" model-value="designatingCurrency.displayname" option-list="designatingcurrencies" value-selected="showMarkets(base)"></combobox>
       </div>
 
-        <div class="row">
+        <div class="">
           <div class="col-xs-12 om-table markets-table">
             <div class="row table-header hidden-xs">
               <div class="col-sm-1"></div>
@@ -49,7 +49,7 @@
             </div>
             <div ng-repeat="market in markets" class="row table-row check-element animate-hide text-center">
               <div class="visible-xs col-xs-7"></div>
-              <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+              <div class="col-xs-4 col-sm-1 col-md-1 col-lg-1">
                 <button type="button" title="Invert Pair" class="btn btn-info btn-xs"
                     ng-show="orderbook.tradingPair.selling.propertyid==market.propertyid"
                     ng-click="invert(orderbook.tradingPair.selling.propertyid,orderbook.tradingPair.desired.propertyid);">

@@ -9,8 +9,8 @@
       <p class="description-text">{{ 'WALLET.SEND.CHANGED' | translate }}:</p>
       <br>
       <center>
-      <button class="btn btn-secondary" ng-click="sendByAmount()" style="font-size: 15px; margin-left: 0px;" tooltip="Value: {{newValue}}">{{ 'WALLET.SEND.TITLE' | translate }} {{newBtcAmount}} BTC</button>
-      <button class="btn btn-secondary" ng-click="sendByValue()" style="font-size: 15px;" tooltip="{{newBtcAmount}} BTC">{{ 'WALLET.SEND.TITLE' | translate }} <span title="{{newValue}}" ng-bind-html="newValue | numeraljs: '$0,0.00':true"></span></button>
+      <button class="btn btn-secondary" ng-click="sendByAmount()" style="font-size: 15px; margin-left: 0px;" tooltip="Value: {{newValue}}">{{ 'WALLET.SEND.TITLE' | translate }} {{newBtcAmount}} HC</button>
+      <button class="btn btn-secondary" ng-click="sendByValue()" style="font-size: 15px;" tooltip="{{newBtcAmount}} HC">{{ 'WALLET.SEND.TITLE' | translate }} <span title="{{newValue}}" ng-bind-html="newValue | numeraljs: '$0,0.00':true"></span></button>
       <br><br>
       <button class="btn btn-tertiary" ng-click="cancel()" style="font-size: 15px;">{{ 'MODALS.SEND.GOBACK' | translate }}.</button>
       </center>

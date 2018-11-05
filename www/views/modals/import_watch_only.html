@@ -6,7 +6,7 @@
 		<div class="row">
 			<div class="form-group col-md-10 col-md-push-1">
 				<label class="control-label">{{ 'MODALS.IMPORT.WATCH.ADDRESS' | translate}} (<a href="/about/faq" target="_new">{{ 'MODALS.IMPORT.WATCH.DESC' | translate}}</a>):</label>
-				<input type="text" name="address" class="form-control" placeholder="Enter your bitcoin address" ng-model="newAddressData.address" required>
+				<input type="text" name="address" class="form-control" placeholder="Enter your HC address" ng-model="newAddressData.address" required>
 				<span style="color:red" ng-show="addressentry.address.$dirty && !validate(newAddressData.address)">{{ 'MODALS.IMPORT.VALID' | translate}}</span>
 				<span style="color:red" ng-show="addressentry.address.$dirty && !addressNotListed(newAddressData.address)">{{ 'MODALS.IMPORT.EXISTS' | translate}}</span>
 			</div>

@@ -55,6 +55,7 @@ function Login($injector, $scope, $http, $location, $modalInstance, $q, Account,
   $scope.toggleMFAcheckbox=function() {
     if ($scope.toggleMFA) {
       $scope.login.mfachecked=!$scope.login.mfachecked;
+      $scope.login.mfatoken= $scope.login.mfachecked ? '' : 'null'
     }
   }
   

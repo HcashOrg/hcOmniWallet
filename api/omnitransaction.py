@@ -12,7 +12,7 @@ class OmniTransaction:
     testnet_exodus_address='TsSmoC9HdBhDhq4ut4TqJY7SBjPqJFAPkGK'
 
     def __init__(self,tx_type,form):
-        self.conn = getRPCconn()
+        #self.conn = getRPCconn()
         self.testnet = False
         self.magicbyte = 0
         self.exodus_address=self.mainnet_exodus_address

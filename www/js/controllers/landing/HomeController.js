@@ -5,8 +5,8 @@ angular.module("omniControllers")
       $location.url('/wallet/overview');
     } else {
       //DEV ONLY
-      console.log('cleared cache');
-      $templateCache.removeAll();
+     // console.log('cleared cache');
+     // $templateCache.removeAll();
 
       $scope.conversions = {};
       $scope.balanceAddress = ""; 

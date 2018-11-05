@@ -27,7 +27,7 @@
           <div class="row">
             <div class="col-xs-12 text-right">
               <a class="btn btn-tertiary" href="/wallet/assets">{{'COMMON.CANCEL' | translate }}</a>
-              <input class="btn btn-main" type="submit" value="{{'COMMON.NEXT' | translate }}" ng-click="confirm()">
+              <input class="btn btn-main" type="submit" value="{{'COMMON.NEXT' | translate }}" ng-click="issuanceForm.$valid && confirm()">
             </div>
           </div>
         </div>

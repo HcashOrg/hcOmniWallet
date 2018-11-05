@@ -85,7 +85,7 @@ angular.module("omniConfig")
 		"DIS1":"You currently have an MFA Device setup on your account.",
 		"DIS2":"Type DISABLE and then enter your current MFA code to deactivate.",
 		"ASQ":"Personal Security Question:",
-		"ASQTOOLTIP":"In the event you lose your MFA device Omniwallet's support team can use this Security Question/Answer to help verify you are the wallet owner and assist in removing the MFA requirements",
+		"ASQTOOLTIP":"In the event you lose your MFA device HcOmniwallet's support team can use this Security Question/Answer to help verify you are the wallet owner and assist in removing the MFA requirements",
 		"ASQPLACEHOLDER":"Setup your Personal Security Question in the MFA Setup",
 		"ASA":"Personal Security Question Answer:",
 		"ASATOOLTIP":"Enter an answer for your security question."
@@ -95,11 +95,11 @@ angular.module("omniConfig")
    		"BALANCECHECK":"Balance Check",
    		"CHECKBALANCE":"Check Balance",
 		"ENTERVALIDADDRESS":"Enter a valid Bitcoin Address ",
-		"WELCOME":"Welcome to Omniwallet"
+		"WELCOME":"Welcome to HcOmniwallet"
 	},
 	"ABOUT":{
 		"CONTACT":{
-			"WE":"We are a group of developers constantly working to improve Omniwallet.",  
+			"WE":"We are a group of developers constantly working to improve HcOmniwallet.",  
 			"QUESTIONS":"If you have any questions, issues or just want to provide some general feedback feel free to reach out to us at:",
 			"GITHUBTITLE":"Github (Bug Reports)",
 			"GITHUBDESC":"Something not working in the wallet properly? Check our 'Open Issues', If you don't see your specific topic open a new issue to let us know. (Please include as many details as possible including ",
@@ -134,14 +134,14 @@ angular.module("omniConfig")
 			"INFO":"Information from the ",
 			"EDUCATION":"Omni Protocol Education"
 		},
-		"OMNIWALLET":{
-			"TITLE" : "About Omniwallet",
-			"AIM" : "Omniwallet is a new type of web wallet which aims to combine security, usability and multi-currency support.",
+		"Omniwallet":{
+			"TITLE" : "About HcOmniwallet",
+			"AIM" : "HcOmniwallet is a new type of web wallet which aims to combine security, usability and multi-currency support.",
 			"SECURITY" : {
 				"TITLE" : "Best in class security",
 				"KEYS" : "Private keys are never sent to the server except in an encrypted form",
 				"OPEN" : "Everything is open source from the ground up!",
-				"REPLICATE" : "You can deploy the Omniwallet on your own server and host your own instance, or use one of the service providers that will host it for you - your money, your choice"
+				"REPLICATE" : "You can deploy the HcOmniwallet on your own server and host your own instance, or use one of the service providers that will host it for you - your money, your choice"
 			},
 			"USABILITY" : {
 				"TITLE" : "Baked in usability",
@@ -152,13 +152,13 @@ angular.module("omniConfig")
 			},
 			"MULTICURRENCY" : {
 				"TITLE" : "Multi-currency support",
-				"BUILT" : "Omniwallet comes with a pre-built support for Bitcoin, Omni and Test Omni",
+				"BUILT" : "HcOmniwallet comes with a pre-built support for Bitcoin, Omni and Test Omni",
 				"SUPPORT" : "Native support for Smart Property and User-Generated Currencies",
-				"ALT" : "Alt-coin support  - Omniwallet has plans to support coins that go outside of the usual Omni ecosystem, such as Litecoin, Peercoin and more"
+				"ALT" : "Alt-coin support  - HcOmniwallet has plans to support coins that go outside of the usual Omni ecosystem, such as Litecoin, Peercoin and more"
 			},
 			"STATUS" :{
 				"TITLE" : "Current Status",
-				"SPEED" : "Omniwallet is in development. Our vision and goal are well defined, and we are working hard to develop the functionality and continually improve the features.",
+				"SPEED" : "HcOmniwallet is in development. Our vision and goal are well defined, and we are working hard to develop the functionality and continually improve the features.",
 				"INVOLVEMENT" : "We would like to get your involvement in the development effort! So go ahead and:",
 				"SUGGESTIONS" : "Play around with it and give us suggestions",
 				"BUGS" : "Report bugs on github",
@@ -178,7 +178,7 @@ angular.module("omniConfig")
 	},
 	"NAVIGATION":{
 		"ABOUT":"About",
-		"ABOUTOMNIWALLET":"About Omniwallet",
+		"ABOUTOmniwallet":"About HcOmniwallet",
 		"ABOUTOMNI":"About Omni",
 		"ACCOUNT":"My Account",
 		"ADDRESSES":"My Addresses",
