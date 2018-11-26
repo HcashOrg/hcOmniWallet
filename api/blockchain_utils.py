@@ -20,7 +20,7 @@ def hc_getunspentutxo(address, ramount, avail=0):
       for tx in unspents:
         txUsed=gettxout(tx['txid'],tx['vout'])['result']
         isUsed = txUsed==None
-        coinbaseHold = (txUsed['coinbase'] and txUsed['confirmations'] < 10)
+        coinbaseHold = (txUsed['coinbase'] and txUsed['confirmations'] < 100)
         multisigSkip = ("scriptPubKey" in txUsed and txUsed['scriptPubKey']['type'] == "multisig")
         if not isUsed and not coinbaseHold and txUsed['confirmations'] > 0 and not multisigSkip:
           avail += tx['amount']*1e8
@@ -56,16 +56,16 @@ def bc_getbalance_explorer(address):
       for tx in unspents:
         txUsed=gettxout(tx['txid'],tx['vout'])['result']
         isUsed = txUsed==None
-        coinbaseHold = (txUsed['coinbase'] and txUsed['confirmations'] < 10)
+        coinbaseHold = (txUsed['coinbase'] and txUsed['confirmations'] < 100)
         multisigSkip = ("scriptPubKey" in txUsed and txUsed['scriptPubKey']['type'] == "multisig")
         if not isUsed and not coinbaseHold and txUsed['confirmations'] > 0 and not multisigSkip:
           balance += tx['amount']*1e8
       return {"bal":balance, "error": None}
     else:
-      return {"bal":0, "error": None}
+      return {"bal":0, "error": r.status_code}
   except Exception as e:
     print e
-    return {"bal":0, "error": None}
+    return {"bal":0, "error": e}
 
 def bc_getbulkbalance(addresses):
   split=[]

@@ -134,7 +134,7 @@
 			"INFO":"Information from the ",
 			"EDUCATION":"Omni Protocol Education"
 		},
-		"Omniwallet":{
+		"OMNIWALLET":{
 			"TITLE" : "About HcOmniwallet",
 			"AIM" : "HcOmniwallet is a new type of web wallet which aims to combine security, usability and multi-currency support.",
 			"SECURITY" : {
@@ -178,7 +178,7 @@
 	},
 	"NAVIGATION":{
 		"ABOUT":"About",
-		"ABOUTOmniwallet":"About HcOmniwallet",
+		"ABOUTOMNIWALLET":"About HcOmniwallet",
 		"ABOUTOMNI":"About Omni",
 		"ACCOUNT":"My Account",
 		"ADDRESSES":"My Addresses",

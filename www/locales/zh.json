@@ -84,7 +84,7 @@
 		"DIS1":"You currently have an MFA Device setup on your account.",
 		"DIS2":"Type DISABLE and then enter your current MFA code to deactivate.",
 		"ASQ":"Personal Security Question:",
-		"ASQTOOLTIP":"In the event you lose your MFA device Omniwallet's support team can use this Security Question/Answer to help verify you are the wallet owner and assist in removing the MFA requirements",
+		"ASQTOOLTIP":"In the event you lose your MFA device HcOmniwallet's support team can use this Security Question/Answer to help verify you are the wallet owner and assist in removing the MFA requirements",
 		"ASQPLACEHOLDER":"Setup your Personal Security Question in the MFA Setup",
 		"ASA":"Personal Security Question Answer:",
 		"ASATOOLTIP":"Enter an answer for your security question."
@@ -94,11 +94,11 @@
    		"BALANCECHECK":"余额查询",
    		"CHECKBALANCE":"查询余额",
 		"ENTERVALIDADDRESS":"输入有效的HC地址",
-		"WELCOME":"欢迎使用Omniwallet"
+		"WELCOME":"欢迎使用HcOmniwallet"
 	},
 	"ABOUT":{
 		"CONTACT":{
-			"WE":"我们是一群不断致力于改进Omniwallet的开发者。",  
+			"WE":"我们是一群不断致力于改进HcOmniwallet的开发者。",  
 			"QUESTIONS":"如果您有任何疑问，问题或只想提供一些一般反馈，欢迎随时与我们联系：",
 			"GITHUBTITLE":"Github (错误报告)",
 			"GITHUBDESC":"有什么东西不能在钱包里正常工作？ 查看我们的“未解决的问题”，如果您没有看到您的具体主题，请发布新问题以通知我们。 （请包括尽可能多的细节，包括 ",
@@ -135,13 +135,13 @@
 			"EDUCATION":"Master Protocol Education"
 		},
 		"OMNIWALLET":{
-			"TITLE" : "About Omniwallet",
-			"AIM" : "Omniwallet is a new type of web wallet which aims to combine security, usability and multi-currency support.",
+			"TITLE" : "About HcOmniwallet",
+			"AIM" : "HcOmniwallet is a new type of web wallet which aims to combine security, usability and multi-currency support.",
 			"SECURITY" : {
 				"TITLE" : "Best in class security",
 				"KEYS" : "Private keys are never sent to the server except in an encrypted form",
 				"OPEN" : "Everything is open source from the ground up!",
-				"REPLICATE" : "You can deploy the Omniwallet on your own server and host your own instance, or use one of the service providers that will host it for you - your money, your choice"
+				"REPLICATE" : "You can deploy the HcOmniwallet on your own server and host your own instance, or use one of the service providers that will host it for you - your money, your choice"
 			},
 			"USABILITY" : {
 				"TITLE" : "Baked in usability",
@@ -152,13 +152,13 @@
 			},
 			"MULTICURRENCY" : {
 				"TITLE" : "Multi-currency support",
-				"BUILT" : "Omniwallet comes with a pre-built support for HC, Omni and Test Omni",
+				"BUILT" : "HcOmniwallet comes with a pre-built support for HC, Omni and Test Omni",
 				"SUPPORT" : "Native support for Smart Property and User-Generated Currencies",
-				"ALT" : "Alt-coin support  - Omniwallet has plans to support coins that go outside of the usual Omni ecosystem, such as Litecoin, Peercoin and more"
+				"ALT" : "Alt-coin support  - HcOmniwallet has plans to support coins that go outside of the usual Omni ecosystem, such as Litecoin, Peercoin and more"
 			},
 			"STATUS" :{
 				"TITLE" : "Current Status",
-				"SPEED" : "Omniwallet is in development. Our vision and goal are well defined, and we are working hard to develop the functionality and continually improve the features.",
+				"SPEED" : "HcOmniwallet is in development. Our vision and goal are well defined, and we are working hard to develop the functionality and continually improve the features.",
 				"INVOLVEMENT" : "We would like to get your involvement in the development effort! So go ahead and:",
 				"SUGGESTIONS" : "Play around with it and give us suggestions",
 				"BUGS" : "Report bugs on github",

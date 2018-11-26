@@ -83,7 +83,7 @@
     "DIS1": "Vous disposez actuellement d'une configuration de périphérique MFA sur votre compte.",
     "DIS2": "Tapez DISABLE et entrez votre code MFA actuel pour désactiver.",
     "ASQ": "Question personnelle de sécurité :",
-    "ASQTOOLTIP": "Dans le cas où vous perdrez votre appareil de MFA, l'équipe de support d'Omniwallet peut utiliser cette Question/Réponse de sécurité pour vérifier que vous êtes le propriétaire du portefeuille et vous aider à supprimer les exigences MFA",
+    "ASQTOOLTIP": "Dans le cas où vous perdrez votre appareil de MFA, l'équipe de support d'HcOmniwallet peut utiliser cette Question/Réponse de sécurité pour vérifier que vous êtes le propriétaire du portefeuille et vous aider à supprimer les exigences MFA",
     "ASQPLACEHOLDER": "Configurez votre Question de Sécurité Personnelle dans la configuration MFA",
     "ASA": "Question Personnelle de Sécurité, Réponse :",
     "ASATOOLTIP": "Entrez une réponse à la question de sécurité."
@@ -93,11 +93,11 @@
     "BALANCECHECK": "Vérification du solde",
     "CHECKBALANCE": "Vérification du solde",
     "ENTERVALIDADDRESS": "Entrez une adresse Bitcoin valide ",
-    "WELCOME": "Bienvenue sur Omniwallet"
+    "WELCOME": "Bienvenue sur HcOmniwallet"
   },
   "ABOUT": {
     "CONTACT": {
-      "WE": "Nous sommes un groupe de développeurs qui travaillent constamment à améliorer Omniwallet.",
+      "WE": "Nous sommes un groupe de développeurs qui travaillent constamment à améliorer HcOmniwallet.",
       "QUESTIONS": "Si vous avez des questions, des problèmes ou simplement souhaitez fournir un avis général, n'hésitez pas à nous contacter à l'adresse suivante :",
       "GITHUBTITLE": "Github (Rapport d'erreur)",
       "GITHUBDESC": "Quelque chose ne fonctionne pas correctement dans le portefeuille? Consultez nos 'Questions ouvertes', Si vous ne voyez pas votre sujet spécifique, ouvrez un nouveau numéro pour nous le faire savoir. (Veuillez inclure autant de détails que possible, y compris ",
@@ -133,13 +133,13 @@
       "EDUCATION": "Omni Protocol Education"
     },
     "OMNIWALLET": {
-      "TITLE": "À propos d'Omniwallet",
-      "AIM": "Omniwallet est un nouveau type de portefeuille Web qui vise à combiner la sécurité, facilité d'utilisation et support multi-devises.",
+      "TITLE": "À propos d'HcOmniwallet",
+      "AIM": "HcOmniwallet est un nouveau type de portefeuille Web qui vise à combiner la sécurité, facilité d'utilisation et support multi-devises.",
       "SECURITY": {
         "TITLE": "Meilleur niveau de sécurité",
         "KEYS": "Les clés privées ne sont jamais envoyées au serveur sauf sous une forme chiffrée",
         "OPEN": "Tout est open source depuis le début !",
-        "REPLICATE": "Vous pouvez déployer Omniwallet sur votre propre serveur et héberger votre propre instance, ou utiliser l'un des fournisseurs de services qui vous l'accueillera - votre argent, votre choix"
+        "REPLICATE": "Vous pouvez déployer HcOmniwallet sur votre propre serveur et héberger votre propre instance, ou utiliser l'un des fournisseurs de services qui vous l'accueillera - votre argent, votre choix"
       },
       "USABILITY": {
         "TITLE": "Facilité d'utilisation",
@@ -150,13 +150,13 @@
       },
       "MULTICURRENCY": {
         "TITLE": "Support multi-devises",
-        "BUILT": "Omniwallet est livré avec un support pré-construit pour Bitcoin, Omni et Test Omni",
+        "BUILT": "HcOmniwallet est livré avec un support pré-construit pour Bitcoin, Omni et Test Omni",
         "SUPPORT": "Support natif pour les biens intelligents et les monnaies générées par l'utilisateur",
-        "ALT": "Support de monnaies alternatives (altcoin) - Omniwallet a l'intention de soutenir les monnaies qui sortent de l'écosystème Omni habituel, tel que le Litecoin, Peercoin et plus"
+        "ALT": "Support de monnaies alternatives (altcoin) - HcOmniwallet a l'intention de soutenir les monnaies qui sortent de l'écosystème Omni habituel, tel que le Litecoin, Peercoin et plus"
       },
       "STATUS": {
         "TITLE": "Statut actuel",
-        "SPEED": "Omniwallet est en développement. Notre vision et notre objectif sont bien définis, et nous travaillons fort pour développer la fonctionnalité et améliorer continuellement les fonctionnalités.",
+        "SPEED": "HcOmniwallet est en développement. Notre vision et notre objectif sont bien définis, et nous travaillons fort pour développer la fonctionnalité et améliorer continuellement les fonctionnalités.",
         "INVOLVEMENT": "Nous souhaitons vous impliquer dans l'effort de développement! Alors, allez-y et :",
         "SUGGESTIONS": "Jouez avec lui et donnez-nous des suggestions",
         "BUGS": "Signaler des bugs sur github",

@@ -173,7 +173,7 @@ npm install grunt
 npm install bower
 npm install
 ```
-*Note*: You need to populate $HOME/.hcwallet/omni.conf with rpcssl, rpcuser, rpcpassword, and rpcport, and database configuration information for the API user example config:
+*Note*: You need to populate $HOME/.hcomniwallet/omni.conf with rpcssl, rpcuser, rpcpassword, and rpcport, and database configuration information for the API user example config:
 ```
 server=1
 rpcport=8332
