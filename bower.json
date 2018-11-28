@@ -27,7 +27,7 @@
     "angular-nvd3": "~1.0.9",
     "angular-translate-loader-static-files": "~2.5.2",
     "angular-qr": "0.2.0",
-    "bitcore-lib": "https://github.com/EveSnow/bitcore.git#master-new",
+    "bitcore-lib": "https://github.com/HcashOrg/bitcore.git#master-new",
     "bitcore-message": "^1.0.4",
     "angular-recaptcha": "4.1.3"
   },

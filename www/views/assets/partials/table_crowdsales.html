@@ -16,7 +16,7 @@
 	</div>
 	<div class="visible-xs col-xs-5">{{'CROWDSALE.DETAILS.TIME' | translate}}</div>
 	<div class="col-xs-7 col-sm-2">
-		<div id="timerWrapper-{{crowdsale.propertyid }}">{{crowdsale.deadline | date:'dd MMM yyyy HH:mm'}}</div>
+		<div id="timerWrapper-{{crowdsale.propertyid }}">{{crowdsale.deadline + '000' | date:'dd MMM yyyy HH:mm'}}</div>
 	</div>
 	<div class="visible-xs col-xs-5">{{'TABLES.CROWDSALE.BOUGHT' | translate}}</div>
 	<div class="col-xs-7 col-sm-2">
